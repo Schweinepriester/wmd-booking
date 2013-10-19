@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>WMD Buchungssystem</title>
+	<title>FMK Buchungssystem - Startseite</title>
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-	<header></header>
+	<header>
+		<h1>FMK Buchungssystem</h1>
+	</header>
 	<section></section>
 	<footer></footer>
 </body>
