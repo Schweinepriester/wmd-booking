@@ -9,6 +9,7 @@
 	<header>
 		<h1>FMK Buchungssystem</h1>
 	</header>
+	<nav></nav>
 	<section></section>
 	<footer></footer>
 </body>
