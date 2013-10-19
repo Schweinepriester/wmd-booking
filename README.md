@@ -1,9 +1,15 @@
-wmd-booking
-===========
+# wmd-booking
 
 Web &amp; Mobile-Development - Projekt - Buchungssystem
 
-===========
+# Aufgabe
 
-Aufgaben
+Siehe [hier](ress/"Projektarbeit - Aufgabenstellung WS 2013.pdf")
 
+# Team
+
+Florian, Marcel, Kai
+
+# Idee
+
+Einfaches Buchungssystem
