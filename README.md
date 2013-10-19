@@ -2,14 +2,14 @@
 
 Web &amp; Mobile-Development - Projekt - Buchungssystem
 
-# Aufgabe
+## Aufgabe
 
-Siehe [hier](ress/"Projektarbeit - Aufgabenstellung WS 2013.pdf")
+Siehe [hier](Projektarbeit%20-%20Aufgabenstellung%20WS%202013.pdf)
 
-# Team
+## Team
 
 Florian, Marcel, Kai
 
-# Idee
+## Idee
 
 Einfaches Buchungssystem
