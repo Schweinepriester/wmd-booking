@@ -37,7 +37,7 @@ Florian, Marcel, Kai
 Was können Besucher?
 
 - Veranstaltung lesen
-- Einloggen (HTTP-Basic, explizit keine benutzerverwaltung!)
+- Einloggen (HTTP-Basic, explizit keine benutzerverwaltung! ggf. sogar dass man sich vor der benutzung generell anmelden muss!)
 - (Registrieren) im ersten schritt nicht
   
 
