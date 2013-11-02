@@ -12,4 +12,5 @@ Florian, Marcel, Kai
 
 ## Idee
 
-Einfaches Buchungssystem
+- <del>Einfaches Buchungssystem</del>
+- Veranstaltungssystem

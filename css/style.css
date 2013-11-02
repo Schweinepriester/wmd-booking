@@ -5,3 +5,12 @@ body{
 	margin: 0;
 	padding: 0;
 }
+
+.maincenter{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.clearfloat{
+	clear: both;
+}
