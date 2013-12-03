@@ -2,6 +2,11 @@
 
 Web &amp; Mobile-Development - Projekt - Veranstaltungssystem
 
+## Installation
+
+- /.htaccess "AuthUserFile" anpassen?
+- "wmd_booking.sql" um die Datenbank zu erstellen
+
 ## Aufgabe
 
 Siehe [hier](ress/Projektarbeit%20-%20Aufgabenstellung%20WS%202013.pdf)

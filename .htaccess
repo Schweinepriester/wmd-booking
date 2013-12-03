@@ -1,20 +1,3 @@
-# RewriteEngine on
-
-# RewriteCond %{REQUEST_METHOD} GET
-# RewriteRule ^todos$ RequestHandler.php?command=GetTodosCommand
-
-# RewriteCond %{REQUEST_METHOD} GET
-# RewriteRule ^todos/(.+)$ RequestHandler.php?command=GetTodoCommand&id=$1
-
-# RewriteCond %{REQUEST_METHOD} POST
-# RewriteRule ^todos$ RequestHandler.php?command=CreateTodoCommand
-
-# RewriteCond %{REQUEST_METHOD} DELETE
-# RewriteRule ^todos/(.+)$ RequestHandler.php?command=DeleteTodoCommand&id=$1
-
-# RewriteCond %{REQUEST_METHOD} PUT
-# RewriteRule ^todos/(.+)$ RequestHandler.php?command=UpdateTodoCommand&id=$1
-
 # Authentication
 AuthType Basic
 AuthName "FMK Veranstaltungssystem"

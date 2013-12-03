@@ -1,0 +1,21 @@
+RewriteEngine on
+
+# Get a single event
+RewriteCond %{REQUEST_METHOD} GET
+RewriteRule ^events/(.+)$ RequestHandler.php?command=GetEventCommand&id=$1
+
+# Get all events
+RewriteCond %{REQUEST_METHOD} GET
+RewriteRule ^events$ RequestHandler.php?command=GetEventsCommand
+
+# Create (POST) an event
+RewriteCond %{REQUEST_METHOD} POST
+RewriteRule ^events$ RequestHandler.php?command=CreateEventCommand
+
+# Delete an event
+RewriteCond %{REQUEST_METHOD} DELETE
+RewriteRule ^events/(.+)$ RequestHandler.php?command=DeleteEventCommand&id=$1
+
+# Update an event
+RewriteCond %{REQUEST_METHOD} PUT
+RewriteRule ^events/(.+)$ RequestHandler.php?command=UpdateEventCommand&id=$1
