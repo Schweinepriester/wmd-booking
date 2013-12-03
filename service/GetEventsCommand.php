@@ -12,7 +12,7 @@
 			}
 			
 			foreach ($events as $event){
-				$event->uri = "/service/todos/$event->id";
+				$event->uri = "/service/events/$event->id";
 				unset($event->id);
 			}
 			
