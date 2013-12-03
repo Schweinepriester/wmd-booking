@@ -1,4 +1,4 @@
-$.widget("event.eventlist", {
+$.widget("event.eventList", {
 
 	reload: function() {
 	this.element.find(".event:not(.template)").remove();

@@ -15,10 +15,10 @@
 	clear: both;
 }*/
 
-.template, #todo_details {
+.template, #event_details {
 	display: none;
 }
 
-.todo {
+.event {
 	cursor: pointer;
 }

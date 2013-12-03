@@ -104,8 +104,8 @@
 			return $events;
 		}
 	
-		public function deleteTodo($id){
-			@$link = new mysqli("localhost", "root", "" ,"todolist"); 	// Verbindung Datenbank
+		public function deleteEvent($id){
+			@$link = new mysqli("localhost", "root", "wacken" ,"wmd_booking"); 	// Verbindung Datenbank
 			
 			if ($link->connect_error) {
 				return self::ERROR;
@@ -118,7 +118,7 @@
 			}
 			
 			$select_statement = "DELETE ".
-								"FROM todo ".
+								"FROM event ".
 								"WHERE id = $id ";
 			$result_set = $link->query($select_statement);
 			$affected_rows = $link->affected_rows; 

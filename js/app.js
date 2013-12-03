@@ -20,10 +20,20 @@ $(function(){ // onload...
 		$.unblockUI();
 	});
 	
+	$("#error_dialog").errorDialog();
+	
+	$("#menu_bar").menubar({
+		onShowEventsClicked: function(){
+			$("#event_list").eventList("reload");
+			$("#event_details").hide();
+			$("#event_list").show();
+		}
+	});
+	
 	$("#event_details").eventDetails();
 	
-	$("#event_list").eventlist({
-		onEventClicked: showTodoDetails,
+	$("#event_list").eventList({
+		onEventClicked: showEventDetails,
 		onDeleteEventClicked: function(event, single_event) {
 			$("#delete_dialog").deleteDialog("open", single_event);
 		},
@@ -32,7 +42,13 @@ $(function(){ // onload...
 		}
 	});
 	
-	function showTodoDetails(event, eventUri) {
+	$("#delete_dialog").deleteDialog({
+		onEventDeleted: function(){
+			$("#event_list").eventList("reload");
+		}
+	});
+	
+	function showEventDetails(event, eventUri) {
 		$("#event_list").hide();
 		$("#event_details").show();
 		$("#event_details").eventDetails("load", eventUri);

@@ -5,7 +5,7 @@
 	require "GetEventsCommand.php";
 	// require "CreateTodoCommand.php";
 	// require "CreateTodoResult.php";
-	// require "DeleteTodoCommand.php";
+	require "DeleteEventCommand.php";
 	// require "UpdateTodoCommand.php";
 	
 	class RequestHandler {

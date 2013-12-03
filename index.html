@@ -19,7 +19,7 @@
 				<span class="label">Wann?</span>
 				<span class="date"></span>
 				<span class="separator">|</span>
-				<span class="label">Ersteller</span>
+				<span class="label">Ersteller:</span>
 				<span class="author"></span>
 				<span class="separator">|</span>
 				<span class="edit_event" href="#">Bearbeiten</span>
@@ -48,11 +48,20 @@
 				<span>Notizen: </span><span class="notes"></span>
 			</div>
 		</div>
+		<div id="error_dialog" title="Fehler!" class="ui-widget">
+			<div class="message"></div>
+		</div>
+		<div id="delete_dialog" title="Veranstaltung löschen?" class="ui-widget">
+			<div>Möchten Sie wirklich die Veranstaltung löschen?</div>
+		</div>
 		<script src="./js/jquery-1.10.2.min.js"></script>
 		<script src="./js/jquery.blockUI.js"></script>
 		<script src="./js/jquery-ui-1.10.3.custom.js"></script>
 		<script src="./js/event.eventlist.js"></script>
 		<script src="./js/event.eventdetails.js"></script>
+		<script src="./js/event.menubar.js"></script>
+		<script src="./js/event.errordialog.js"></script>
+		<script src="./js/event.deletedialog.js"></script>
 		<script src="./js/app.js" type="text/javascript"></script>
 	</body>
 </html>
