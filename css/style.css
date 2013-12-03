@@ -1,6 +1,6 @@
 /* TODO CSS-Reset? */
 
-body{
+/*body{
 	font-size: 10px;
 	margin: 0;
 	padding: 0;
@@ -13,4 +13,12 @@ body{
 
 .clearfloat{
 	clear: both;
+}*/
+
+.template, #todo_details {
+	display: none;
+}
+
+.todo {
+	cursor: pointer;
 }
