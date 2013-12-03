@@ -6,7 +6,7 @@
 	// require "CreateTodoCommand.php";
 	// require "CreateTodoResult.php";
 	require "DeleteEventCommand.php";
-	// require "UpdateTodoCommand.php";
+	require "UpdateEventCommand.php";
 	
 	class RequestHandler {
 		public function handleRequest() {
@@ -29,7 +29,7 @@
 			$result = $command->execute($request, $request_headers);
 
 			if ($result != NULL){
-				echo(json_encode($result));		// Ausgabe in JSON
+				echo(json_encode($result));
 			}
 			
 		}
