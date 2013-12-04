@@ -7,16 +7,16 @@
 		const OK = "OK";
 		const VERSION_OUTDATED = "VERSION_OURDATED";
 		
-		public function createTodo($todo){
-			if ($todo->title == ''){
-				$result = new CreateTodoResult();
+		public function createEvent($event){
+			if ($event->title == ''){
+				$result = new CreateEventResult();
 				$result->status_code = self::INVALID_INPUT;
-				$result->validation_message["title"] = "Fehler, Titel ist Pflicht!!!";
+				$result->validation_message["title"] = "Fehler, Titel ist eine Pflichtangabe!";
 				
 				return $result;
 			}
 			
-			@$link = new mysqli("localhost", "root", "" ,"todolist"); 	// Verbindung Datenbank
+			@$link = new mysqli("localhost", "root", "wacken" ,"wmd_booking"); 	// Verbindung Datenbank
 			
 			if ($link->connect_error) {
 				return self::ERROR;
@@ -28,18 +28,20 @@
 				return self::ERROR;
 			}
 			
-			$insert_statement = "INSERT INTO todo SET ".
-								"title = '$todo->title', ".
-								"due_date = '$todo->due_date', ".
-								"created_date = CURRENT_DATE, ".
-								"notes = '$todo->notes', ".
+			$insert_statement = "INSERT INTO event SET ".
+								"title = '$event->title', ".
+								"date = '$event->date', ".
+								"starttime = '$event->starttime', ".
+								"endtime = '$event->endtime', ".
+								"author = '$event->author', ".
+								"notes = '$event->notes', ".
 								"version = 1" ;
 			
 			$link->query($insert_statement);
 			$id = $link->insert_id;
 			$link->close();
 			
-			$result = new CreateTodoResult();
+			$result = new CreateEventResult();
 			$result->status_code = self::OK;
 			$result->id = $id;
 			
@@ -129,16 +131,19 @@
 			}
 		}
 		
-		public function updateTodo($todo){
-			@$link = new mysqli("localhost", "root", "" ,"todolist"); 	// Verbindung Datenbank		
+		public function updateEvent($event){
+			@$link = new mysqli("localhost", "root", "wacken" ,"wmd_booking"); 	// Verbindung Datenbank		
 			$link->set_charset("utf8");
 			
-			$update_statement = "UPDATE todo SET ".
-								"title = '$todo->title', ".
-								"due_date = '$todo->due_date', ".
-								"notes = '$todo->notes', ".
+			$update_statement = "UPDATE event SET ".
+								"title = '$event->title', ".
+								"date = '$event->date', ".
+								"starttime = '$event->starttime', ".
+								"endtime = '$event->endtime', ".
+								"author = '$event->author', ".
+								"notes = '$event->notes', ".
 								"version = version + 1 ".
-								"WHERE id = $todo->id AND version = $todo->version";
+								"WHERE id = $event->id AND version = $event->version";
 								
 			
 			$link->query($update_statement);
@@ -146,8 +151,8 @@
 		
 			if ($affected_rows == 0) {
 				$select_statement = "SELECT COUNT(*)".
-									"FROM todo ".
-									"WHERE id = $todo->id";
+									"FROM event ".
+									"WHERE id = $event->id";
 				$result_set = $link->query($select_statement);
 				$row = $result_set->fetch_row();
 				$count = $row[0];

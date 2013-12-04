@@ -1,3 +1,4 @@
+# Enable Rewriting
 RewriteEngine on
 
 # Get a single event

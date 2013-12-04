@@ -2,7 +2,7 @@
 	
 	class UpdateEventCommand {
 		public function execute($request, $request_headers) {
-			$event = new Todo();
+			$event = new Event();
 			
 			if(isset($request["title"]) == TRUE){
 				$event->title = $request["title"];
@@ -18,11 +18,11 @@
 			$event_service = new EventService();
 			$result = $event_service->updateEvent($event);
 			
-			if($result == TodoService::VERSION_OUTDATED){
+			if($result == EventService::VERSION_OUTDATED){
 				header("HTTP/1.1 412");
 				return;
 			}
-			if($result == TodoService::NOT_FOUND){
+			if($result == EventService::NOT_FOUND){
 				header("HTTP/1.1 404");
 				return;
 			}

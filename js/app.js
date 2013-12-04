@@ -48,6 +48,12 @@ $(function(){ // onload...
 		}
 	});
 	
+	$("#edit_dialog").editDialog({
+		onEventUpdated: function(){
+			$("#event_list").eventList("reload");
+		}
+	});
+	
 	function showEventDetails(event, eventUri) {
 		$("#event_list").hide();
 		$("#event_details").show();
