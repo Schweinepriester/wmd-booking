@@ -7,111 +7,116 @@
 		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
-		<div id="menu_bar" class="ui-widget">
-			<a class="show_events" href="#">Alle Veranstaltungen</a>
-			<a class="create_event" href="#">Neue Veranstaltung</a>
-		</div>
-		<div id="event_list" class="ui-widget">
-			<div class="event template">
-				<span class="label">Was?</span>
-				<span class="title"></span>
-				<span class="separator">|</span>
-				<span class="label">Wann?</span>
-				<span class="date"></span>
-				<span class="separator">|</span>
-				<span class="label">Ersteller:</span>
-				<span class="author"></span>
-				<span class="separator">|</span>
-				<span class="edit_event" href="#">Bearbeiten</span>
-				<span class="separator">|</span>
-				<span class="delete_event" href="#">Löschen</span>
+		<div class="maincenter">
+			<div class="header">
+				<h1>FMK Veranstalungssystem</h1>
 			</div>
-		</div>
-		<div id="event_details" class="ui-widget">
-			<span>Details</span>
-			<div>
-				<span>Titel: </span><span class="title"></span>
+			<div id="menu_bar" class="ui-widget">
+				<a class="show_events" href="#">Alle Veranstaltungen</a>
+				<a class="create_event" href="#">Neue Veranstaltung</a>
 			</div>
-			<div>
-				<span>Datum: </span><span class="date"></span>
+			<div id="event_list" class="ui-widget">
+				<div class="event template">
+					<span class="label">Was?</span>
+					<span class="title"></span>
+					<span class="separator">|</span>
+					<span class="label">Wann?</span>
+					<span class="date"></span>
+					<span class="separator">|</span>
+					<span class="label">Ersteller:</span>
+					<span class="author"></span>
+					<span class="separator">|</span>
+					<span class="edit_event" href="#">Bearbeiten</span>
+					<span class="separator">|</span>
+					<span class="delete_event" href="#">Löschen</span>
+				</div>
 			</div>
-			<div>
-				<span>Von: </span><span class="starttime"></span>
+			<div id="event_details" class="ui-widget">
+				<span>Details</span>
+				<div>
+					<span>Titel: </span><span class="title"></span>
+				</div>
+				<div>
+					<span>Datum: </span><span class="date"></span>
+				</div>
+				<div>
+					<span>Von: </span><span class="starttime"></span>
+				</div>
+				<div>
+					<span>Bis: </span><span class="endtime"></span>
+				</div>
+				<div>
+					<span>Ersteller: </span><span class="author"></span>
+				</div>
+				<div>
+					<span>Notizen: </span><span class="notes"></span>
+				</div>
 			</div>
-			<div>
-				<span>Bis: </span><span class="endtime"></span>
+			<div id="error_dialog" title="Fehler!" class="ui-widget">
+				<div class="message"></div>
 			</div>
-			<div>
-				<span>Ersteller: </span><span class="author"></span>
+			<div id="delete_dialog" title="Veranstaltung löschen?" class="ui-widget">
+				<div>Möchten Sie wirklich die Veranstaltung löschen?</div>
 			</div>
-			<div>
-				<span>Notizen: </span><span class="notes"></span>
-			</div>
-		</div>
-		<div id="error_dialog" title="Fehler!" class="ui-widget">
-			<div class="message"></div>
-		</div>
-		<div id="delete_dialog" title="Veranstaltung löschen?" class="ui-widget">
-			<div>Möchten Sie wirklich die Veranstaltung löschen?</div>
-		</div>
-		<div id="edit_dialog" title="Veranstaltung bearbeiten" class="ui-widget">
-	      <form>
-	        <table>
-	          <tr>
-	            <td><td/>
-	            <td colspan="2"><span class="validation_message ui-state-error-text"></span></td>
-	          </tr>
-	          <tr>
-	            <td>
-	              <label for="date_field">Datum</label>,
-	              <label for="title_field">Titel</label>:
-	            </td>
-	            <td><input id="date_field" type="text"/></td>
-	            <td><input id="title_field" type="text"/></td>
-	          </tr>
-	          <tr>
-	            <td>
-	              <label for="starttime_field">Anfang</label>,
-	              <label for="endtime_field">Ende</label>:
-	            </td>
-	            <td><input id="starttime_field" type="text"/></td>
-	            <td><input id="endtime_field" type="text"/></td>
-	          </tr>
-	          <tr>
-	            <td><label for="notes_field">Notizen:</label></td>
-	            <td colspan="2"><textarea id="notes_field"></textarea></td>
-	          </tr>
-	        </table>
-	      </form>
-	    </div>
-	    <div id="create_dialog" title="Veranstaltung erstellen" class="ui-widget">
-	      <form>
-	        <table>
-	          <!-- <tr>
-	            <td colspan="2"><span class="validation_message ui-state-error-text"></span></td>
-	          </tr> -->
-	          <tr>
-	            <td>
-	              <label for="create_date_field">Datum</label>,
-	              <label for="create_title_field">Titel</label>:
-	            </td>
-	            <td><input id="create_date_field" type="text"/></td>
-	            <td><input id="create_title_field" type="text"/></td>
-	          </tr>
-	          <tr>
-	            <td>
-	              <label for="create_starttime_field">Anfang</label>,
-	              <label for="create_endtime_field">Ende</label>:
-	            </td>
-	            <td><input id="create_starttime_field" type="text"/></td>
-	            <td><input id="create_endtime_field" type="text"/></td>
-	          </tr>
-	          <tr>
-	            <td><label for="create_notes_field">Notizen:</label></td>
-	            <td colspan="2"><textarea id="create_notes_field"></textarea></td>
-	          </tr>
-	        </table>
-	      </form>
+			<div id="edit_dialog" title="Veranstaltung bearbeiten" class="ui-widget">
+		      <form>
+		        <table>
+		          <tr>
+		            <td><td/>
+		            <td colspan="2"><span class="validation_message ui-state-error-text"></span></td>
+		          </tr>
+		          <tr>
+		            <td>
+		              <label for="date_field">Datum</label>,
+		              <label for="title_field">Titel</label>:
+		            </td>
+		            <td><input id="date_field" type="text"/></td>
+		            <td><input id="title_field" type="text"/></td>
+		          </tr>
+		          <tr>
+		            <td>
+		              <label for="starttime_field">Anfang</label>,
+		              <label for="endtime_field">Ende</label>:
+		            </td>
+		            <td><input id="starttime_field" type="text"/></td>
+		            <td><input id="endtime_field" type="text"/></td>
+		          </tr>
+		          <tr>
+		            <td><label for="notes_field">Notizen:</label></td>
+		            <td colspan="2"><textarea id="notes_field"></textarea></td>
+		          </tr>
+		        </table>
+		      </form>
+		    </div>
+		    <div id="create_dialog" title="Veranstaltung erstellen" class="ui-widget">
+		      <form>
+		        <table>
+		          <!-- <tr>
+		            <td colspan="2"><span class="validation_message ui-state-error-text"></span></td>
+		          </tr> -->
+		          <tr>
+		            <td>
+		              <label for="create_date_field">Datum</label>,
+		              <label for="create_title_field">Titel</label>:
+		            </td>
+		            <td><input id="create_date_field" type="text"/></td>
+		            <td><input id="create_title_field" type="text"/></td>
+		          </tr>
+		          <tr>
+		            <td>
+		              <label for="create_starttime_field">Anfang</label>,
+		              <label for="create_endtime_field">Ende</label>:
+		            </td>
+		            <td><input id="create_starttime_field" type="text"/></td>
+		            <td><input id="create_endtime_field" type="text"/></td>
+		          </tr>
+		          <tr>
+		            <td><label for="create_notes_field">Notizen:</label></td>
+		            <td colspan="2"><textarea id="create_notes_field"></textarea></td>
+		          </tr>
+		        </table>
+		      </form>
+		    </div>
 	    </div>
 		<script src="./js/jquery-1.10.2.min.js"></script>
 		<script src="./js/jquery.blockUI.js"></script>

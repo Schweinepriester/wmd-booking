@@ -1,6 +1,6 @@
 /* TODO CSS-Reset? */
 
-/*body{
+body{
 	font-size: 10px;
 	margin: 0;
 	padding: 0;
@@ -13,7 +13,7 @@
 
 .clearfloat{
 	clear: both;
-}*/
+}
 
 .template, #event_details {
 	display: none;
