@@ -4,9 +4,9 @@ Web &amp; Mobile-Development - Projekt - Veranstaltungssystem
 
 ## Installation
 
-- /service/Config.php anpassen
-- /.htaccess "AuthUserFile" anpassen
-- "wmd_booking.sql" um die Datenbank zu erstellen
+- `/service/Config.php` anpassen
+- In `/.htaccess` `AuthUserFile` anpassen
+- `wmd_booking.sql` um die Datenbank zu erstellen
 
 ## Knowissues
 
