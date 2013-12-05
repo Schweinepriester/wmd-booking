@@ -18,6 +18,7 @@
 				return;
 			}
 			unset($event->id);
+			$event->duration = $event_service->calcDuration($event->starttime, $event->endtime);
 
 			header("Etag: $event->version");
 			unset($event->version);

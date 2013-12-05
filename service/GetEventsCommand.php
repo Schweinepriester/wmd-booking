@@ -3,7 +3,7 @@
 	class GetEventsCommand {
 		
 		public function execute() {
-			$event_service = new EventService;
+			$event_service = new EventService();
 			$events = $event_service->readEvents();
 			
 			if($events == EventService::ERROR){
@@ -12,7 +12,8 @@
 			}
 			
 			foreach ($events as $event){
-				$event->uri = "/wmd-booking/service/events/$event->id";
+				$event->uri = $GLOBALS["service_uri"].$event->id;
+				$event->duration = $event_service->calcDuration($event->starttime,$event->endtime);
 				unset($event->id);
 			}
 			

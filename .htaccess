@@ -1,5 +1,5 @@
 # Authentication
 AuthType Basic
 AuthName "FMK Veranstaltungssystem"
-AuthUserFile "c:\xampp\htdocs\wmd-booking\.htuser
+AuthUserFile c:\xampp\htdocs\wmd-booking\.htuser
 Require valid-user

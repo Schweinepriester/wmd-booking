@@ -1,5 +1,7 @@
 <?php
 	
+	require "Config.php";
+	
 	class EventService {
 		const ERROR = "ERROR";
 		const NOT_FOUND = "NOT_FOUND";
@@ -16,7 +18,7 @@
 				return $result;
 			}
 			
-			@$link = new mysqli("localhost", "root", "wacken" ,"wmd_booking"); 	// Verbindung Datenbank
+			@$link = new mysqli($GLOBALS["db_host"], $GLOBALS["db_user"], $GLOBALS["db_pw"], $GLOBALS["db_table"]);
 			
 			if ($link->connect_error) {
 				return self::ERROR;
@@ -49,7 +51,7 @@
 		}
 		
 		public function readEvent($id){
-			@$link = new mysqli("localhost", "root", "wacken" ,"wmd_booking");
+			@$link = new mysqli($GLOBALS["db_host"], $GLOBALS["db_user"], $GLOBALS["db_pw"], $GLOBALS["db_table"]);
 			
 			if ($link->connect_error) {
 				return self::ERROR;
@@ -61,7 +63,7 @@
 				return self::ERROR;
 			}
 			
-			$select_statement = "SELECT id, title, date, starttime, endtime, author, notes ".
+			$select_statement = "SELECT * ".
 								// "as due, author, title, notes, version ".
 								"FROM event ".
 								"WHERE id = $id ";
@@ -74,16 +76,11 @@
 				return self::NOT_FOUND;
 			}
 			
-			$starttime = new DateTime($event->starttime);
-			$endtime = new DateTime($event->endtime);
-			$duration = $starttime->diff($endtime);
-			$event->duration = $duration->format('%H:%I:%S');
-			
 			return $event;
 		}
 		
 		public function readEvents() {
-			@$link = new mysqli("localhost", "root", "wacken" ,"wmd_booking"); 	// Verbindung Datenbank
+			@$link = new mysqli($GLOBALS["db_host"], $GLOBALS["db_user"], $GLOBALS["db_pw"], $GLOBALS["db_table"]);
 			
 			if ($link->connect_error) {
 				return self::ERROR;
@@ -113,7 +110,7 @@
 		}
 	
 		public function deleteEvent($id){
-			@$link = new mysqli("localhost", "root", "wacken" ,"wmd_booking"); 	// Verbindung Datenbank
+			@$link = new mysqli($GLOBALS["db_host"], $GLOBALS["db_user"], $GLOBALS["db_pw"], $GLOBALS["db_table"]); 	// Verbindung Datenbank
 			
 			if ($link->connect_error) {
 				return self::ERROR;
@@ -138,7 +135,7 @@
 		}
 		
 		public function updateEvent($event){
-			@$link = new mysqli("localhost", "root", "wacken" ,"wmd_booking"); 	// Verbindung Datenbank		
+			@$link = new mysqli($GLOBALS["db_host"], $GLOBALS["db_user"], $GLOBALS["db_pw"], $GLOBALS["db_table"]);		
 			$link->set_charset("utf8");
 			
 			$update_statement = "UPDATE event SET ".
@@ -173,5 +170,11 @@
 				}
 		}
 		
+		public function calcDuration($starttime, $endtime){
+			$stime = new DateTime($starttime);
+			$etime = new DateTime($endtime);
+			$duration = $stime->diff($etime);
+			return $duration->format('%H:%I:%S');
+		}
 	}
 ?>

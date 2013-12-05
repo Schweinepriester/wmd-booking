@@ -22,9 +22,8 @@
 				return $result->validation_message;
 			}
 			
-		 
-			header("HTTP/1.1 201");
-			header("Location: /wmd-booking/service/events/$result->id");
+		 	header("HTTP/1.1 201");
+			header("Location: ".$GLOBALS["service_uri"].$result->id);
 			
 		}
 	}
