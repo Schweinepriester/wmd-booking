@@ -7,6 +7,11 @@ Web &amp; Mobile-Development - Projekt - Veranstaltungssystem
 - /.htaccess "AuthUserFile" anpassen?
 - "wmd_booking.sql" um die Datenbank zu erstellen
 
+## Knowissues
+
+- mobile: rücksprung nach löschen
+- mobile: pushrefresh wording falsch
+
 ## Todo?
 
 - event.config.js

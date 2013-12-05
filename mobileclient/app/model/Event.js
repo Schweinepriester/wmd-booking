@@ -5,8 +5,13 @@ Ext.define("Eventliste.model.Event", {
 			{name: "title"},
 			{name: "author"},
 			{name: "date", type: "date"},
-			{name: "notes"}
-		]
+			{name: "starttime"},
+			{name: "endtime"},
+			{name: "duration"},
+			{name: "notes"},
+			{name: "version"}
+		],
+		idProperty: "uri"
 	}
 
 });

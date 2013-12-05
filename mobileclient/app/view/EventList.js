@@ -3,13 +3,20 @@ Ext.define("Eventliste.view.EventList", {
 	xtype: "eventlist",
 	requires: [ "Ext.plugin.PullRefresh"],
 	config: {
-		plugins: [
-		{ xclass: "Ext.plugin.PullRefresh"
-		}],
 		title: "Eventliste",
 		store: "Events",
-		itemTpl: "<div><strong>{title}</strong> von {author}</div>",
-		emptyText: "Keine Veranstaltungen"
+		itemTpl: "<div><strong>{title}</strong> am {date:date('d.m.Y')}</div>",
+		emptyText: "Keine Veranstaltungen",
+		plugins: [{
+			// xclass : "Ext.plugin.PullRefresh",
+			type: "pullrefresh",
+			pullText: "Zum Aktualisieren herunterziehen",
+			releaseText: "Zum Aktualisieren loslassen",
+			loadingText: "Laden...",
+			loadedText: " ",
+			lastUpdatedText: " ",
+			lastUpdatedDateFormat: " "
+		}]
 	}
 	
 });

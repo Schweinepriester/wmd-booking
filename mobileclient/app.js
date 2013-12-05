@@ -9,11 +9,16 @@ Ext.Loader.setPath({
 
 Ext.application({
     name: "Eventliste",
+    
+    requires: [
+    	"Eventliste.data.proxy.Rest"
+    ],
 
     views: [
         "Main",
 		"EventList",
-		"EventForm"
+		"EventForm",
+		"MessageBox"
     ],
 	
 	stores: [
@@ -28,7 +33,6 @@ Ext.application({
 		"AppController"
 	],
 	
-
     icon: {
         "57": "resources/icons/Icon.png",
         "72": "resources/icons/Icon~ipad.png",
