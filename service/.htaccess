@@ -9,7 +9,7 @@ RewriteRule ^events/(.+)$ RequestHandler.php?command=GetEventCommand&id=$1
 RewriteCond %{REQUEST_METHOD} GET
 RewriteRule ^events$ RequestHandler.php?command=GetEventsCommand
 
-# Create (POST) an event
+# Create an event
 RewriteCond %{REQUEST_METHOD} POST
 RewriteRule ^events$ RequestHandler.php?command=CreateEventCommand
 

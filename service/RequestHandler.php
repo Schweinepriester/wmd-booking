@@ -3,8 +3,8 @@
 	require "EventService.php";
 	require "GetEventCommand.php";
 	require "GetEventsCommand.php";
-	// require "CreateTodoCommand.php";
-	// require "CreateTodoResult.php";
+	require "CreateEventCommand.php";
+	require "CreateEventResult.php";
 	require "DeleteEventCommand.php";
 	require "UpdateEventCommand.php";
 	

@@ -27,6 +27,9 @@ $(function(){ // onload...
 			$("#event_list").eventList("reload");
 			$("#event_details").hide();
 			$("#event_list").show();
+		},
+		onCreateEventClicked: function(){
+			$("#create_dialog").createDialog("open");
 		}
 	});
 	
@@ -50,6 +53,12 @@ $(function(){ // onload...
 	
 	$("#edit_dialog").editDialog({
 		onEventUpdated: function(){
+			$("#event_list").eventList("reload");
+		}
+	});
+	
+	$("#create_dialog").createDialog({
+		onEventCreated: function(){
 			$("#event_list").eventList("reload");
 		}
 	});

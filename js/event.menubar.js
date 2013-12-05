@@ -8,6 +8,11 @@ $.widget("event.menubar", {
 			return false;
 		});
 		
+		this.element.find(".create_event").click(function(){
+			that._trigger("onCreateEventClicked");
+			return false;
+		});
+		
 		this._super();
 	}
 });

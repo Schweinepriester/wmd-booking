@@ -1,4 +1,4 @@
-$.widget("event.editDialog", $.ui.dialog, {
+$.widget("event.createDialog", $.ui.dialog, {
 	options: {
 		autoOpen: false,
 		modal: true,
@@ -6,17 +6,17 @@ $.widget("event.editDialog", $.ui.dialog, {
 		
 	},
 	
-	open: function(single_event){
-		this._event = single_event;
+	open: function(){
+		// this._event = single_event;
 		this._super();
 		
-		this.element.find(".validation_message").empty();
-		this.element.find("#title_field").removeClass("ui-state-error").val(single_event.title);
-		this.element.find("#date_field").val(single_event.date);
+		// this.element.find(".validation_message").empty();
+		this.element.find("#create_title_field").removeClass("ui-state-error").val("");
+		this.element.find("#create_date_field").val("");
 		// this.element.find("#title_field").val(single_event.title);
-		this.element.find("#starttime_field").val(single_event.starttime);
-		this.element.find("#endtime_field").val(single_event.endtime);
-		this.element.find("#notes_field").val(single_event.notes);
+		this.element.find("#create_starttime_field").val("");
+		this.element.find("#create_endtime_field").val("");
+		this.element.find("#create_notes_field").val("");
 
 	},
 	
@@ -27,7 +27,7 @@ $.widget("event.editDialog", $.ui.dialog, {
 		{
 			text: "Speichern",
 			click: function(){
-			  that._updateEvent();	
+			  that._createEvent();	
 			}
 		},
 		{
@@ -39,22 +39,22 @@ $.widget("event.editDialog", $.ui.dialog, {
 		this._super();
 	},
 	
-	_updateEvent: function(){
+	_createEvent: function(){
 		var single_event = {
-			title: this.element.find("#title_field").val(),
-			date: this.element.find("#date_field").val(),
-			starttime: this.element.find("#starttime_field").val(),
-			endtime: this.element.find("#endtime_field").val(),
+			title: this.element.find("#create_title_field").val(),
+			date: this.element.find("#create_date_field").val(),
+			starttime: this.element.find("#create_starttime_field").val(),
+			endtime: this.element.find("#create_endtime_field").val(),
 			author: "Frontend!",
-			notes: this.element.find("#notes_field").val()
+			notes: this.element.find("#create_notes_field").val()
 		};
 		$.ajax({
-			type: "PUT",
-			url: this._event.uri,
-			headers: {"If-Match": this._event.version },
+			type: "POST",
+			url: "/wmd-booking/service/events",
+			// headers: {"If-Match": this._event.version },
 			data: single_event,
 			success: function(){
-				this._trigger("onEventUpdated");
+				this._trigger("onEventCreated");
 				this.close();
 				},
 			error: function(request) {
