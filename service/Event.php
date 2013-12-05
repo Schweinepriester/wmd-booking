@@ -5,6 +5,7 @@
 		public $date;
 		public $starttime;
 		public $endtime;
+		public $duration;
 		public $author;
 		public $notes;
 		public $version;

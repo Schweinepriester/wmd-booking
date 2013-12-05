@@ -74,6 +74,11 @@
 				return self::NOT_FOUND;
 			}
 			
+			$starttime = new DateTime($event->starttime);
+			$endtime = new DateTime($event->endtime);
+			$duration = $starttime->diff($endtime);
+			$event->duration = $duration->format('%H:%I:%S');
+			
 			return $event;
 		}
 		
@@ -98,6 +103,7 @@
 			
 			$events = array();
 			$event = $result_set->fetch_object("Event");
+
 			while($event !== NULL) {
 				$events[] = $event;
 				$event = $result_set->fetch_object("Event");

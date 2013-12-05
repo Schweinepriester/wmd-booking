@@ -15,6 +15,7 @@ $.widget("event.eventDetails", {
 			eventElement.find(".date").text(single_event.date);
 			eventElement.find(".starttime").text(single_event.starttime);
 			eventElement.find(".endtime").text(single_event.endtime);
+			eventElement.find(".duration").text(single_event.duration);
 			eventElement.find(".author").text(single_event.author);
 			eventElement.find(".notes").text(single_event.notes);
 		}
