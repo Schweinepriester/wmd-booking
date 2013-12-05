@@ -22,7 +22,7 @@ $.widget("event.createDialog", $.ui.dialog, {
 	
 	_create: function() {
 		var that = this;
-		// this.element.find("#due_date_field").datepicker({dateFormat: "yy-mm-dd"});
+		this.element.find("#create_date_field").datepicker({dateFormat: "yy-mm-dd"});
 		this.options.buttons = [
 		{
 			text: "Speichern",
