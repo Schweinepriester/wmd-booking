@@ -19,18 +19,29 @@
 			
 			<div id="event_list" class="ui-widget">
 				<div class="event template">
-					<span class="label">Veranstaltung</span>
-					<span class="title"></span>
-					<span class="separator">|</span>
-					<span class="label">Datum</span>
-					<span class="date"></span>
-					<span class="separator">|</span>
-					<span class="label">Uhrzeit</span>
-					<span class="starttime"></span>
-					<span class="separator">|</span>
-					<span class="edit_event" href="#">Bearbeiten</span>
-					<span class="separator">|</span>
-					<span class="delete_event" href="#">Löschen</span>
+					<div class="event_data">
+						<div class="event_group big">
+							<span class="label">Veranstaltung:</span>
+							<span class="title"></span>
+						</div>
+						<!-- <span class="separator">|</span> -->
+						<div class="event_group">
+							<span class="label">Datum:</span>
+							<span class="date"></span>
+						</div>
+						<!-- <span class="separator">|</span> -->
+						<div class="event_group">
+							<span class="label">Uhrzeit:</span>
+							<span class="starttime"></span>
+						</div>
+					</div>
+					<!-- <span class="separator">|</span> -->
+					<div class="event_buttons">
+						<span class="edit_event" href="#">Bearbeiten</span>
+						<!-- <span class="separator">|</span> -->
+						<span class="delete_event" href="#">Löschen</span>
+					</div>
+					<div class="clearfloat"></div>
 				</div>
 			</div>
 			
@@ -58,7 +69,7 @@
 					<span>Notizen: </span><span class="notes"></span>
 				</div>
 			</div>
-			
+		</div>
 			<div id="error_dialog" title="Fehler!" class="ui-widget">
 				<div class="message"></div>
 			</div>
@@ -135,8 +146,6 @@
 		        </table>
 		      </form>
 		    </div>
-		    
-	    </div>
 		<script src="./js/jquery-1.10.2.min.js"></script>
 		<script src="./js/jquery.blockUI.js"></script>
 		<script src="./js/jquery-ui-1.10.3.custom.js"></script>

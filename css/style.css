@@ -4,11 +4,22 @@ body{
 	font-size: 10px;
 	margin: 0;
 	padding: 0;
+	font-family: Verdana,Arial,sans-serif;
+	background-color: #ecf0f1;
+	color: #2c3e50;
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
 }
 
 .maincenter{
 	width: 1000px;
 	margin: 0 auto;
+}
+
+.maincenter > div{
+	border-bottom: 1px dashed #2980b9;	
 }
 
 .clearfloat{
@@ -21,4 +32,86 @@ body{
 
 .event {
 	cursor: pointer;
+}
+
+.header{
+	text-align: center;
+	font-size: 2em;
+	padding: 1.5em 0;
+}
+
+#menu_bar{
+	padding: 0.8em 0;
+	font-size: 1.4em;
+}
+
+#menu_bar a{
+	text-decoration: none;
+	color: #ecf0f1;
+	background-color: #2c3e50;
+	padding: 0.5em;
+	display: inline-block;
+}
+
+#menu_bar a+a{
+	margin-left: 1em;
+}
+
+#event_list, #event_details{
+	padding: 1em 0;
+}
+
+#event_list, #event_details span{
+	font-size: 1.4em;	
+}
+
+.event{
+	padding: 0.5em 0.2em;
+}
+
+.event:nth-of-type(odd){
+	background-color: #bdc3c7;
+}
+
+.event_data{
+	float: left;
+}
+
+.event_buttons{
+	float: right;
+}
+
+.event_buttons span{
+	background-color: #2c3e50;
+	padding: 0 0.5em;
+}
+
+.event_group{
+	width: 200px;
+	display: inline-block;
+}
+
+.edit_event{
+	color: #16a085;
+}
+
+.delete_event{
+	color: #d35400;
+}
+
+.event_group.big{
+	width: 400px;	
+}
+
+.label{
+	margin-right: 0.5em;
+}
+
+h2{
+	margin-bottom: 0.5em;
+}
+
+#event_details span:first-of-type{
+	font-weight: bold;
+	margin-right: 0.3em;
 }
