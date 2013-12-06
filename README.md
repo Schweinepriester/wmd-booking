@@ -6,7 +6,16 @@ Web &amp; Mobile-Development - Projekt - Veranstaltungssystem
 
 - `/service/Config.php` anpassen
 - In `/.htaccess` `AuthUserFile` anpassen
+- Ggf. `/.htuser` anpassen
 - `wmd_booking.sql` oder `wmd_booking_structure_only.sql` um die Datenbank zu erstellen
+
+## Strato-Installation
+
+- <http://stackoverflow.com/questions/2916232/call-to-undefined-function-apache-request-headers>
+- <http://strato-faq.de/1632>
+- `event.sql`
+- <http://www.strato-faq.de/10>
+
 
 ## Knowissues
 
