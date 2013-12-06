@@ -5,10 +5,10 @@ $(function(){ // onload...
 			return;
 		}
 		$("#error_dialog").errorDialog("open", request.statusText);
-		$("#todo_details").hide();
-		$("#todo_list").show();
+		$("#event_details").hide();
+		$("#event_list").show();
 		if (request.status == 404) {
-			$("#todo_list").todolist("reload");
+			$("#event_list").eventlist("reload");
 		}
 	});
 	
