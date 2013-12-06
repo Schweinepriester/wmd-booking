@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Dez 2013 um 20:49
+-- Erstellungszeit: 06. Dez 2013 um 01:52
 -- Server Version: 5.6.11
 -- PHP-Version: 5.5.3
 
@@ -38,15 +38,17 @@ CREATE TABLE IF NOT EXISTS `event` (
   `notes` text NOT NULL,
   `version` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Daten für Tabelle `event`
 --
 
 INSERT INTO `event` (`id`, `title`, `date`, `starttime`, `endtime`, `author`, `notes`, `version`) VALUES
-(1, 'Test1', '2013-12-04', '12:00:00', '13:00:00', 'Kai', 'Test', 1),
-(2, 'Test2', '2013-12-12', '15:00:30', '23:37:42', 'Flo', 'Harhar!', 1);
+(9, 'Weihnachten', '2013-12-24', '12:00:00', '22:00:00', 'ChangeTest', 'Partypartyparty!!!', 4),
+(13, 'Bla', '2013-12-29', '15:00:00', '17:00:00', 'Frontend!', 'asdasd', 1),
+(14, 'CreateTest', '2013-12-20', '15:00:00', '15:00:50', 'Frontend!', 'Haaaallo!', 1),
+(15, 'AuthorTest', '2013-12-13', '17:00:42', '17:01:00', 'Kai', 'Yessss', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
