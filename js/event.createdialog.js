@@ -16,6 +16,7 @@ $.widget("event.createDialog", $.ui.dialog, {
 		// this.element.find("#title_field").val(single_event.title);
 		this.element.find("#create_starttime_field").val("");
 		this.element.find("#create_endtime_field").val("");
+		this.element.find("#create_author_field").val(""),
 		this.element.find("#create_notes_field").val("");
 
 	},
@@ -45,7 +46,7 @@ $.widget("event.createDialog", $.ui.dialog, {
 			date: this.element.find("#create_date_field").val(),
 			starttime: this.element.find("#create_starttime_field").val(),
 			endtime: this.element.find("#create_endtime_field").val(),
-			author: "Frontend!",
+			author: this.element.find("#create_author_field").val(),
 			notes: this.element.find("#create_notes_field").val()
 		};
 		$.ajax({

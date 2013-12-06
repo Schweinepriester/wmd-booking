@@ -16,6 +16,7 @@ $.widget("event.editDialog", $.ui.dialog, {
 		// this.element.find("#title_field").val(single_event.title);
 		this.element.find("#starttime_field").val(single_event.starttime);
 		this.element.find("#endtime_field").val(single_event.endtime);
+		this.element.find("#author_field").val(single_event.author),
 		this.element.find("#notes_field").val(single_event.notes);
 
 	},
@@ -45,7 +46,7 @@ $.widget("event.editDialog", $.ui.dialog, {
 			date: this.element.find("#date_field").val(),
 			starttime: this.element.find("#starttime_field").val(),
 			endtime: this.element.find("#endtime_field").val(),
-			author: "Frontend!",
+			author: this.element.find("#author_field").val(),
 			notes: this.element.find("#notes_field").val()
 		};
 		$.ajax({

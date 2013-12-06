@@ -6,7 +6,7 @@ Web &amp; Mobile-Development - Projekt - Veranstaltungssystem
 
 - `/service/Config.php` anpassen
 - In `/.htaccess` `AuthUserFile` anpassen
-- `wmd_booking.sql` um die Datenbank zu erstellen
+- `wmd_booking.sql` oder `wmd_booking_structure_only.sql` um die Datenbank zu erstellen
 
 ## Knowissues
 
@@ -17,6 +17,7 @@ Web &amp; Mobile-Development - Projekt - Veranstaltungssystem
 
 - event.config.js
 - <del>config.php</del>
+- <http://api.jqueryui.com/datepicker/#method-setDate>
 
 ## Aufgabe
 

@@ -25,7 +25,7 @@ $.widget("event.eventList", {
 			var eventElement = that.element.find(".template").clone().removeClass("template");
 			eventElement.find(".title").text(single_event.title);
 			eventElement.find(".date").text(single_event.date);
-			eventElement.find(".author").text(single_event.author);
+			eventElement.find(".starttime").text(single_event.starttime);
 			eventElement.click(single_event.uri, function(event){
 				that._trigger("onEventClicked", null, event.data);
 			});
